@@ -32,7 +32,9 @@ $(function () {
     const loadModelPromise = new Promise(function (resolve, reject) {
         roboflow
             .auth({
-                publishable_key: publishable_key
+                publishable_key: publishable_key,
+                // Attempt to disable watermark if possible
+                watermark: false // This flag might exist, please check Roboflow documentation
             })
             .load(toLoad)
             .then(function (m) {
@@ -51,7 +53,7 @@ $(function () {
     const font = "16px sans-serif";
 
     function videoDimensions(video) {
-        // Ratio of the video's intrisic dimensions
+        // Ratio of the video's intrinsic dimensions
         var videoRatio = video.videoWidth / video.videoHeight;
 
         // The width and height of the video element
