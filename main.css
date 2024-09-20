@@ -37,22 +37,15 @@ video, canvas {
     left: 0;
 }
 
-/*
+/* CSS to hide the Roboflow watermark, if it's placed with after pseudo-element */
 body:after {
-    content: "";
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 350px;
-    height: 150px;
-    z-index: 1;
-    background-image: url("https://uploads-ssl.webflow.com/5eca8e43c4dfff837f0f6392/5ecad58e650fb5ec53e8b811_roboflow_assets_logo_white.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: bottom right;
+    display: none !important;
 }
-*/
 
+/* Hide any potential Roboflow logo div (replace .roboflow-logo with the actual class if found) */
+.roboflow-logo {
+    display: none !important;
+}
 
 #fps {
     position: fixed;
